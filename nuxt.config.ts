@@ -6,7 +6,6 @@ export default defineNuxtConfig({
       title: 'Warehouse Manager',
       meta: [
         {
-          'http-equiv': 'Content-Security-Policy',
           content: "default-src 'self'; script-src 'self' 'unsafe-inline';"
         },
         { 
@@ -14,7 +13,7 @@ export default defineNuxtConfig({
         },
       ],
     },
-    //baseURL: '/warehouse-management/', // This is the correct place to set the base URL
+    baseURL: '/warehouse-management/', // This is the correct place to set the base URL
   },
 
   compatibilityDate: '2024-09-29',
