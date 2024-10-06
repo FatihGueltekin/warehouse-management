@@ -32,4 +32,7 @@ Build the application for production:
 # npm
 npm run build
 
+https://FatihGueltekin.github.io/warehouse-management
+
+
 

@@ -3,7 +3,7 @@ import { $fetch as $fetch$1 } from "ofetch";
 import { baseURL } from "#internal/nuxt/paths";
 import { createHooks } from "hookable";
 import { getContext } from "unctx";
-import { sanitizeStatusCode, createError as createError$1 } from "h3";
+import { sanitizeStatusCode, createError as createError$1, appendHeader } from "h3";
 import { getActiveHead, CapoPlugin } from "unhead";
 import { defineHeadPlugin } from "@unhead/shared";
 import { START_LOCATION, createMemoryHistory, createRouter as createRouter$1, useRoute as useRoute$1, RouterView } from "vue-router";
@@ -554,7 +554,7 @@ const generateRouteKey$1 = (routeProps, override) => {
 const wrapInKeepAlive = (props, children) => {
   return { default: () => children };
 };
-function toArray(value) {
+function toArray$1(value) {
   return Array.isArray(value) ? value : [value];
 }
 async function getRouteRules(url) {
@@ -720,7 +720,7 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
       routerBase += "#";
     }
     const history = ((_a = routerOptions.history) == null ? void 0 : _a.call(routerOptions, routerBase)) ?? createMemoryHistory(routerBase);
-    const routes = routerOptions.routes ? ([__temp, __restore] = executeAsync(() => routerOptions.routes(_routes)), __temp = await __temp, __restore(), __temp) ?? _routes : _routes;
+    const routes2 = routerOptions.routes ? ([__temp, __restore] = executeAsync(() => routerOptions.routes(_routes)), __temp = await __temp, __restore(), __temp) ?? _routes : _routes;
     let startPosition;
     const router = createRouter$1({
       ...routerOptions,
@@ -741,7 +741,7 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
         }
       },
       history,
-      routes
+      routes: routes2
     });
     nuxtApp.vueApp.use(router);
     const previousRoute = shallowRef(router.currentRoute.value);
@@ -832,7 +832,7 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
           if (!componentMiddleware) {
             continue;
           }
-          for (const entry2 of toArray(componentMiddleware)) {
+          for (const entry2 of toArray$1(componentMiddleware)) {
             middlewareEntries.add(entry2);
           }
         }
@@ -919,11 +919,60 @@ const revive_payload_server_eJ33V7gbc6 = /* @__PURE__ */ defineNuxtPlugin({
 const components_plugin_KR1HBZs4kY = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:global-components"
 });
+function toArray(value) {
+  return Array.isArray(value) ? value : [value];
+}
+function useRequestEvent(nuxtApp = useNuxtApp()) {
+  var _a;
+  return (_a = nuxtApp.ssrContext) == null ? void 0 : _a.event;
+}
+function prerenderRoutes(path) {
+  if (!import.meta.prerender) {
+    return;
+  }
+  const paths = toArray(path);
+  appendHeader(useRequestEvent(), "x-nitro-prerender", paths.map((p) => encodeURIComponent(p)).join(", "));
+}
+let routes;
+const prerender_server_LXx1wM9sKF = /* @__PURE__ */ defineNuxtPlugin(async () => {
+  let __temp, __restore;
+  if (!import.meta.prerender || routerOptions.hashMode) {
+    return;
+  }
+  if (routes && !routes.length) {
+    return;
+  }
+  routes || (routes = Array.from(processRoutes(([__temp, __restore] = executeAsync(() => {
+    var _a;
+    return (_a = routerOptions.routes) == null ? void 0 : _a.call(routerOptions, _routes);
+  }), __temp = await __temp, __restore(), __temp) ?? _routes)));
+  const batch = routes.splice(0, 10);
+  prerenderRoutes(batch);
+});
+const OPTIONAL_PARAM_RE = /^\/?:.*(?:\?|\(\.\*\)\*)$/;
+function processRoutes(routes2, currentPath = "/", routesToPrerender = /* @__PURE__ */ new Set()) {
+  var _a;
+  for (const route of routes2) {
+    if (OPTIONAL_PARAM_RE.test(route.path) && !((_a = route.children) == null ? void 0 : _a.length)) {
+      routesToPrerender.add(currentPath);
+    }
+    if (route.path.includes(":")) {
+      continue;
+    }
+    const fullPath = joinURL(currentPath, route.path);
+    routesToPrerender.add(fullPath);
+    if (route.children) {
+      processRoutes(route.children, fullPath, routesToPrerender);
+    }
+  }
+  return routesToPrerender;
+}
 const plugins = [
   unhead_KgADcZ0jPj,
   plugin,
   revive_payload_server_eJ33V7gbc6,
-  components_plugin_KR1HBZs4kY
+  components_plugin_KR1HBZs4kY,
+  prerender_server_LXx1wM9sKF
 ];
 const layouts = {
   default: () => import("./_nuxt/default-D7VaM3Uo.js")
@@ -1155,7 +1204,7 @@ const __nuxt_component_1 = defineComponent({
 function _mergeTransitionProps(routeProps) {
   const _props = routeProps.map((prop) => ({
     ...prop,
-    onAfterLeave: prop.onAfterLeave ? toArray(prop.onAfterLeave) : void 0
+    onAfterLeave: prop.onAfterLeave ? toArray$1(prop.onAfterLeave) : void 0
   }));
   return defu(..._props);
 }
