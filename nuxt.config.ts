@@ -5,18 +5,17 @@ export default defineNuxtConfig({
     head: {
       title: 'Warehouse Manager',
       meta: [
-        { name: 'description', content: 'Warehouse management system for spare parts' },
         {
           'http-equiv': 'Content-Security-Policy',
           content: "default-src 'self'; script-src 'self' 'unsafe-inline';"
-        }
-      ]
+        },
+        { 
+          name: 'description', content: 'Warehouse management system for spare parts' 
+        },
+      ],
     },
+    baseURL: '/warehouse-management/', // This is the correct place to set the base URL
   },
 
-  router: {
-    base: '/warehouse-management/',
-  },
-
-  compatibilityDate: '2024-09-29'
+  compatibilityDate: '2024-09-29',
 });
