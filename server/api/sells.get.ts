@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import { join } from 'path';
 
 export default defineEventHandler(async () => {
-  const filePath = join(process.cwd(), 'server/data/satislar.json');
+  const filePath = join(process.cwd(), 'static/data/satislar.json');
 
   // Load current sales from satislar.json
   let salesData = [];

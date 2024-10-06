@@ -5,8 +5,8 @@ export default defineEventHandler(async (event) => {
   const body = await readBody(event); // Get the new sales data
   const currentDate = new Date();
 
-  const filePath = join(process.cwd(), 'server/data/satislar.json');
-  const archiveFolderPath = join(process.cwd(), 'server/archive');
+  const filePath = join(process.cwd(), 'static/data/satislar.json');
+  const archiveFolderPath = join(process.cwd(), 'static/archive');
 
   // Create archive folder if it doesn't exist
   if (!await fs.stat(archiveFolderPath).catch(() => false)) {
