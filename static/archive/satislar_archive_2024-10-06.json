@@ -1,0 +1,18 @@
+[
+  {
+    "satis_numarasi": "3",
+    "satis_tarihi": "2023-11-08",
+    "satis_yili": "2023",
+    "satis_ayi": "11",
+    "satis_günü": "08",
+    "satilan_ürünler": [
+      "4",
+      "5",
+      "6"
+    ],
+    "satis_plakasi": "34 ABC 123",
+    "satis_iptal_edildi": false,
+    "satis_iptal_tarihi": null,
+    "satis_müsteri_adi": "Haka Ünsal"
+  }
+]

@@ -1,0 +1,219 @@
+[
+  {
+    "ürün_numarasi": "1",
+    "ürün_ismi": "Fren Balatası",
+    "ürün_adedi": 18,
+    "ürün_kayit_tarihi": "2024-09-29",
+    "ürün_fiyati": 31.41
+  },
+  {
+    "ürün_numarasi": "2",
+    "ürün_ismi": "Yağ Filtresi",
+    "ürün_adedi": 14,
+    "ürün_kayit_tarihi": "2024-09-26",
+    "ürün_fiyati": 63.72
+  },
+  {
+    "ürün_numarasi": "3",
+    "ürün_ismi": "Hava Filtresi",
+    "ürün_adedi": 18,
+    "ürün_kayit_tarihi": "2024-09-22",
+    "ürün_fiyati": 39.58
+  },
+  {
+    "ürün_numarasi": "4",
+    "ürün_ismi": "Akü",
+    "ürün_adedi": 14,
+    "ürün_kayit_tarihi": "2024-10-05",
+    "ürün_fiyati": 53.27
+  },
+  {
+    "ürün_numarasi": "5",
+    "ürün_ismi": "Fren Halati",
+    "ürün_fiyati": "1511.00",
+    "ürün_adedi": 9,
+    "kayit_tarihi": "2024-10-05"
+  },
+  {
+    "ürün_numarasi": "6",
+    "ürün_ismi": "Fren Diski",
+    "ürün_adedi": 14,
+    "ürün_kayit_tarihi": "2024-09-17",
+    "ürün_fiyati": 26.8
+  },
+  {
+    "ürün_numarasi": "7",
+    "ürün_ismi": "Şanzıman Yağı",
+    "ürün_adedi": 6,
+    "ürün_kayit_tarihi": "2024-09-16",
+    "ürün_fiyati": 86.67
+  },
+  {
+    "ürün_numarasi": "8",
+    "ürün_ismi": "Lastik",
+    "ürün_adedi": 20,
+    "ürün_kayit_tarihi": "2024-10-02",
+    "ürün_fiyati": 14.71
+  },
+  {
+    "ürün_numarasi": "9",
+    "ürün_ismi": "Motor Yağı",
+    "ürün_adedi": 2,
+    "ürün_kayit_tarihi": "2024-09-22",
+    "ürün_fiyati": 51.99
+  },
+  {
+    "ürün_numarasi": "10",
+    "ürün_ismi": "Soğutma Suyu",
+    "ürün_adedi": 15,
+    "ürün_kayit_tarihi": "2024-09-15",
+    "ürün_fiyati": 76.33
+  },
+  {
+    "ürün_numarasi": "11",
+    "ürün_ismi": "Yıldız Somunu",
+    "ürün_adedi": 11,
+    "ürün_kayit_tarihi": "2024-09-26",
+    "ürün_fiyati": 44.76
+  },
+  {
+    "ürün_numarasi": "12",
+    "ürün_ismi": "Ateşleme Bobini",
+    "ürün_adedi": 13,
+    "ürün_kayit_tarihi": "2024-09-25",
+    "ürün_fiyati": 92.47
+  },
+  {
+    "ürün_numarasi": "13",
+    "ürün_ismi": "Kaput Amortisörü",
+    "ürün_adedi": 1,
+    "ürün_kayit_tarihi": "2024-10-01",
+    "ürün_fiyati": 22.2
+  },
+  {
+    "ürün_numarasi": "14",
+    "ürün_ismi": "Direksiyon Pompası",
+    "ürün_adedi": 8,
+    "ürün_kayit_tarihi": "2024-09-20",
+    "ürün_fiyati": 59.61
+  },
+  {
+    "ürün_numarasi": "15",
+    "ürün_ismi": "Debriyaj Seti",
+    "ürün_adedi": 19,
+    "ürün_kayit_tarihi": "2024-09-12",
+    "ürün_fiyati": 49.28
+  },
+  {
+    "ürün_numarasi": "16",
+    "ürün_ismi": "Far",
+    "ürün_adedi": 20,
+    "ürün_kayit_tarihi": "2024-09-09",
+    "ürün_fiyati": 17.16
+  },
+  {
+    "ürün_numarasi": "17",
+    "ürün_ismi": "Fren Hidroliği",
+    "ürün_adedi": 9,
+    "ürün_kayit_tarihi": "2024-09-11",
+    "ürün_fiyati": 78.56
+  },
+  {
+    "ürün_numarasi": "18",
+    "ürün_ismi": "Bujiler",
+    "ürün_adedi": 5,
+    "ürün_kayit_tarihi": "2024-09-14",
+    "ürün_fiyati": 29.14
+  },
+  {
+    "ürün_numarasi": "19",
+    "ürün_ismi": "Egzoz Borusu",
+    "ürün_adedi": 7,
+    "ürün_kayit_tarihi": "2024-09-04",
+    "ürün_fiyati": 38.47
+  },
+  {
+    "ürün_numarasi": "20",
+    "ürün_ismi": "Fren Sistemi",
+    "ürün_adedi": 16,
+    "ürün_kayit_tarihi": "2024-09-03",
+    "ürün_fiyati": 50.08
+  },
+  {
+    "ürün_numarasi": "21",
+    "ürün_ismi": "Radyatör",
+    "ürün_adedi": 12,
+    "ürün_kayit_tarihi": "2024-09-30",
+    "ürün_fiyati": 75.4
+  },
+  {
+    "ürün_numarasi": "22",
+    "ürün_ismi": "Fren Silindiri",
+    "ürün_adedi": 10,
+    "ürün_kayit_tarihi": "2024-09-27",
+    "ürün_fiyati": 42.95
+  },
+  {
+    "ürün_numarasi": "23",
+    "ürün_ismi": "Karbüratör",
+    "ürün_adedi": 8,
+    "ürün_kayit_tarihi": "2024-09-28",
+    "ürün_fiyati": 129.99
+  },
+  {
+    "ürün_numarasi": "24",
+    "ürün_ismi": "Emme Manifoldu",
+    "ürün_adedi": 5,
+    "ürün_kayit_tarihi": "2024-09-20",
+    "ürün_fiyati": 90.55
+  },
+  {
+    "ürün_numarasi": "25",
+    "ürün_ismi": "Triger Kayışı",
+    "ürün_adedi": 7,
+    "ürün_kayit_tarihi": "2024-09-18",
+    "ürün_fiyati": 37.99
+  },
+  {
+    "ürün_numarasi": "26",
+    "ürün_ismi": "Yakıtsız Hava Filtre",
+    "ürün_adedi": 15,
+    "ürün_kayit_tarihi": "2024-09-15",
+    "ürün_fiyati": 23.7
+  },
+  {
+    "ürün_numarasi": "27",
+    "ürün_ismi": "Fren Fıçısı",
+    "ürün_adedi": 20,
+    "ürün_kayit_tarihi": "2024-09-01",
+    "ürün_fiyati": 60
+  },
+  {
+    "ürün_numarasi": "28",
+    "ürün_ismi": "Tekerlek Somunu",
+    "ürün_adedi": 25,
+    "ürün_kayit_tarihi": "2024-09-10",
+    "ürün_fiyati": 14.5
+  },
+  {
+    "ürün_numarasi": "29",
+    "ürün_ismi": "Yüksek Voltaj Bobini",
+    "ürün_adedi": 5,
+    "ürün_kayit_tarihi": "2024-09-03",
+    "ürün_fiyati": 85
+  },
+  {
+    "ürün_numarasi": "30",
+    "ürün_ismi": "Jant",
+    "ürün_adedi": 12,
+    "ürün_kayit_tarihi": "2024-09-05",
+    "ürün_fiyati": 119.99
+  },
+  {
+    "ürün_numarasi": "31",
+    "ürün_ismi": "Halat halati",
+    "ürün_fiyati": "233.00",
+    "ürün_adedi": 21111,
+    "ürün_kayit_tarihi": "2024-10-05"
+  }
+]
