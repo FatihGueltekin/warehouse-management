@@ -16,12 +16,7 @@ pids
 node_modules/
 .pnpm/
 
-# Build output
-dist/
-build/
 .nuxt/
-.out/
-# Add this line to .gitignore
 .output/
 
 
