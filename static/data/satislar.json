@@ -12,8 +12,7 @@
     ],
     "satis_plakasi": "34 ABC 123",
     "satis_iptal_edildi": false,
-    "satis_iptal_tarihi": null,
-    "satis_müsteri_adi": "Ali Yilmaz"
+    "satis_iptal_tarihi": null
   },
   {
     "satis_numarasi": "2",
@@ -28,8 +27,7 @@
     ],
     "satis_plakasi": "34 AAA 000",
     "satis_iptal_edildi": false,
-    "satis_iptal_tarihi": null,
-    "satis_müsteri_adi": "Hakan Ünsal"
+    "satis_iptal_tarihi": null
   },
   {
     "satis_numarasi": 1,
@@ -44,8 +42,7 @@
     ],
     "satis_plakasi": "34 ABC 123",
     "satis_iptal_edildi": false,
-    "satis_iptal_tarihi": null,
-    "satis_müsteri_adi": "Ali Yilmaz"
+    "satis_iptal_tarihi": null
   },
   {
     "satis_numarasi": "2",
@@ -60,41 +57,34 @@
     ],
     "satis_plakasi": "34 AAA 000",
     "satis_iptal_edildi": false,
-    "satis_iptal_tarihi": null,
-    "satis_müsteri_adi": "Hakan Ünsal"
+    "satis_iptal_tarihi": null
   },
-  [
-    {
-      "satis_numarasi": 1,
-      "satis_tarihi": "2024-09-20",
-      "satis_yili": "2024",
-      "satis_ayi": "09",
-      "satis_günü": "20",
-      "satilan_ürünler": [
-        "1",
-        "2",
-        "3"
-      ],
-      "satis_plakasi": "34 ABC 123",
-      "satis_iptal_edildi": false,
-      "satis_iptal_tarihi": null,
-      "satis_müsteri_adi": "Ali Yilmaz"
-    },
-    {
-      "satis_numarasi": 1,
-      "satis_tarihi": "2024-09-20",
-      "satis_yili": "2024",
-      "satis_ayi": "09",
-      "satis_günü": "20",
-      "satilan_ürünler": [
-        "1",
-        "2",
-        "3"
-      ],
-      "satis_plakasi": "34 ABC 123",
-      "satis_iptal_edildi": false,
-      "satis_iptal_tarihi": null,
-      "satis_müsteri_adi": "Ali Yilmaz"
-    }
-  ]
+  {
+    "satis_numarasi": 1728693405,
+    "satis_tarihi": "2024-10-12",
+    "satis_yili": 2024,
+    "satis_ayi": "10",
+    "satis_günü": "12",
+    "satilan_ürünler": [
+      "1"
+    ],
+    "satis_plakasi": "06 VWX 321",
+    "satis_iptal_edildi": false,
+    "satis_iptal_tarihi": null
+  },
+  {
+    "satis_numarasi": 1728693485,
+    "satis_tarihi": "2024-10-12",
+    "satis_yili": 2024,
+    "satis_ayi": "10",
+    "satis_günü": "12",
+    "satilan_ürünler": [
+      "9",
+      "8",
+      "7"
+    ],
+    "satis_plakasi": "06 VWX 321",
+    "satis_iptal_edildi": false,
+    "satis_iptal_tarihi": null
+  }
 ]

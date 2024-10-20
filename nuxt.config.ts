@@ -13,7 +13,7 @@ export default defineNuxtConfig({
         },
       ],
     },
-    baseURL: '/warehouse-management/', // This is the correct place to set the base URL
+    //baseURL: '/warehouse-management/', // This is the correct place to set the base URL
   },
 
   compatibilityDate: '2024-09-29',

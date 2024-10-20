@@ -229,8 +229,6 @@ const addProduct = async () => {
     return;
   }
 
-  console.log("getCurrentDate(): ", getCurrentDate())
-
   // Add new product to the list
   products.value.unshift({ 
     ürün_numarasi: newProduct.value.ürün_numarasi,
@@ -239,8 +237,6 @@ const addProduct = async () => {
     ürün_adedi: parseInt(newProduct.value.ürün_adedi, 10), 
     ürün_kayit_tarihi: getCurrentDate()
   });
-
-  console.log("prodocuts: ", products.value[0]);
 
   // Save to products.json
   await saveToDatabase();

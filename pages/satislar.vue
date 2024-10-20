@@ -63,9 +63,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { useFetch } from '#app'
-
 // States for sales data and new sale input
 const sales = ref([])
 const newSale = ref({
@@ -83,12 +80,10 @@ const newSale = ref({
 
 // Fetch sales data on page load
 const fetchSales = async () => {
-  console.log("fetch sales")
   const sellsResponse = await fetch('/api/sells');
 
   if (sellsResponse.ok) {
     sales.value = await sellsResponse.json() || [];
-    console.log("sales: ", sales.value)
   }
 }
 
@@ -130,8 +125,6 @@ const addSale = async () => {
 // Remove a sale by satis_numarasi
 const removeSale = async (saleNumber) => {
   sales.value = sales.value.filter(sale => sale.satis_numarasi !== saleNumber)
-
-  console.log("removeSale sales.value: ", sales.value)
 
   await $fetch('/api/sells', {
     method: 'POST',

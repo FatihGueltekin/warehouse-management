@@ -22,6 +22,14 @@
       <CarsSearch :cars="cars" @selectCar="selectCar" />
       <h3>Ürün listesi: </h3>
       <SpareParts :parts="allSpareParts" />
+
+      <SuccessModal
+        v-if="showSuccessModal"
+        header="Islem uygulandi!"
+        text="Satilan ürünler basariyla sisteme islende."
+        :visible="showSuccessModal"
+        @close="showSuccessModal = false"
+      />
     </div>
   </template>
   
@@ -39,38 +47,74 @@
   // Error handling
   const showError = ref(false)
   const errorMessage = ref('')
+  const showSuccessModal = ref(false);
+
+  const newSale = ref({
+    satis_numarasi: '',
+    satis_tarihi: '',
+    satis_yili: '',
+    satis_ayi: '',
+    satis_günü: '',
+    satilan_ürünler: [],
+    satis_plakasi: '',
+    satis_iptal_edildi: false,
+    satis_iptal_tarihi: null,
+  })
 
   // Function to select a car
   const selectCar = (car) => {
     selectedCar.value = car
   }
   
-  // Function to fetch cars and spare parts data
-  onMounted(async () => {
-    try {
-      const carsResponse = await fetch('/api/cars');
-      const partsResponse = await fetch('/api/parts');
+  // Add a new sale
+  const addSale = async (partIds) => {
+    console.log("addSale - partIds: ", partIds)
+    // Split the products sold input string into an array
+    newSale.value.satilan_ürünler = partIds;
 
-      if (carsResponse.ok) {
-        cars.value = await carsResponse.json();
-      }
+    console.log("newSale.value.satilan_ürünler: ", newSale.value.satilan_ürünler)
 
-      if (partsResponse.ok) {
-        allSpareParts.value = await partsResponse.json();
-        allSpareParts.value.sort((a, b) => {
-          return a.ürün_numarasi - b.ürün_numarasi;
-        });
-      }
-    } catch (error) {
-      console.error('Verlier yüklenemedi.:', error);
-      showError.value = true
-      errorMessage.value = 'Verlier yüklenemedi.'
+    const currentDate = new Date();
+
+    // Extract the year, month, and day from the current date
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are 0-based, so +1
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    
+    newSale.value.satis_tarihi = `${year}-${month}-${day}`
+    newSale.value.satis_yili = year
+    newSale.value.satis_ayi = month
+    newSale.value.satis_günü = day
+    const timestampInSeconds = Math.floor(Date.now() / 1000);
+    newSale.value.satis_numarasi = timestampInSeconds;
+    newSale.value.satis_plakasi = selectedCar.value;
+    newSale.value.satis_iptal_edildi = false;
+    newSale.value.satis_iptal_tarihi = null;
+
+    console.log("newSale: ", newSale.value);
+
+    await $fetch('/api/sells', {
+      method: 'POST',
+      body: newSale.value
+    })
+
+    // Reset newSale object
+    newSale.value = {
+      satis_numarasi: '',
+      satis_tarihi: '',
+      satis_yili: '',
+      satis_ayi: '',
+      satis_günü: '',
+      satilan_ürünler: [],
+      satis_plakasi: '',
+      satis_iptal_edildi: false,
+      satis_iptal_tarihi: null,
     }
-  });
+  }
   
   // Function to decrease stock of a part
   const decreaseStock = async (partsIds) => {
-    console.log("partsId: ", partsIds)
+    console.log("partIds: ", partsIds)
     // Check if no license plate is selected
     if (!selectedCar.value) {
       showError.value = true
@@ -85,14 +129,12 @@
       return
     }
 
-    console.log("partIds: ", partsIds);
-
     for (let i = 0; i < partsIds.length; i++) {
       const partId = partsIds[i];
       const part = allSpareParts.value.find(p => p.ürün_numarasi === partId);
 
-      if (part && part.adet > 0) {
-        part.adet -= 1;
+      if (part && part.ürün_adedi > 0) {
+        part.ürün_adedi -= 1;
 
         if (part.adet < 0) {
           showError.value = true;
@@ -116,16 +158,45 @@
         method: 'POST',
         body: allSpareParts.value,
       });
+
+      showSuccessModal.value = true;
     } catch (error) {
       showErrorModal('Ürünler sisteme eklenemedi.');
+
+      return;
     }
+
+    addSale(partsIds);
   };
 
   const closeErrorModal = () => {
     showError.value = false
   }
-  </script>
-  <style scoped>
+
+  // Function to fetch cars and spare parts data
+  onMounted(async () => {
+    try {
+      const carsResponse = await fetch('/api/cars');
+      const partsResponse = await fetch('/api/parts');
+
+      if (carsResponse.ok) {
+        cars.value = await carsResponse.json();
+      }
+
+      if (partsResponse.ok) {
+        allSpareParts.value = await partsResponse.json();
+        allSpareParts.value.sort((a, b) => {
+          return a.ürün_numarasi - b.ürün_numarasi;
+        });
+      }
+    } catch (error) {
+      console.error('Verlier yüklenemedi.:', error);
+      showError.value = true
+      errorMessage.value = 'Verlier yüklenemedi.'
+    }
+  });
+</script>
+<style scoped>
   .menu {
     position: absolute;
     top: 0;

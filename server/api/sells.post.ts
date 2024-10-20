@@ -6,12 +6,12 @@ export default defineEventHandler(async (event) => {
   const currentDate = new Date();
 
   const filePath = join(process.cwd(), 'static/data/satislar.json');
-  const archiveFolderPath = join(process.cwd(), 'static/archive');
+  //const archiveFolderPath = join(process.cwd(), 'asstes/archive');
 
   // Create archive folder if it doesn't exist
-  if (!await fs.stat(archiveFolderPath).catch(() => false)) {
-    await fs.mkdir(archiveFolderPath);
-  }
+  //if (!await fs.stat(archiveFolderPath).catch(() => false)) {
+  //  await fs.mkdir(archiveFolderPath);
+  //}
 
   // Load current sales from satislar.json
   let salesData = [];
@@ -33,6 +33,17 @@ export default defineEventHandler(async (event) => {
 
   // Convert ISO date string (e.g. "2024-09-20") to JavaScript Date object
   const parseDate = (dateString: any) => {
+    console.log("DateString: ", dateString)
+    if (!dateString) {
+      const currentDate = new Date();
+
+      // Extract the year, month, and day from the current date
+      const year = currentDate.getFullYear();
+      const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are 0-based, so +1
+      const day = String(currentDate.getDate()).padStart(2, '0');
+      
+      dateString = `${year}-${month}-${day}`
+    }
     const [year, month, day] = dateString.split('-').map(Number);
     return new Date(year, month - 1, day); // Month is zero-based in JavaScript Date
   };
@@ -55,9 +66,9 @@ export default defineEventHandler(async (event) => {
   // If there are sales to archive, create an archive file
   if (salesToArchive.length > 0) {
     const archiveFileName = `satislar_archive_${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}.json`;
-    const archiveFilePath = join(archiveFolderPath, archiveFileName);
+    //const archiveFilePath = join(archiveFolderPath, archiveFileName);
 
-    await fs.writeFile(archiveFilePath, JSON.stringify(salesToArchive, null, 2));
+    //await fs.writeFile(archiveFilePath, JSON.stringify(salesToArchive, null, 2));
   }
 
   // Append the new sale to the recent sales

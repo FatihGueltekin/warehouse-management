@@ -2,28 +2,28 @@
   {
     "ürün_numarasi": "1",
     "ürün_ismi": "Fren Balatası",
-    "ürün_adedi": 18,
+    "ürün_adedi": 10,
     "ürün_kayit_tarihi": "2024-09-29",
     "ürün_fiyati": 31.41
   },
   {
     "ürün_numarasi": "2",
     "ürün_ismi": "Yağ Filtresi",
-    "ürün_adedi": 14,
+    "ürün_adedi": 9,
     "ürün_kayit_tarihi": "2024-09-26",
     "ürün_fiyati": 63.72
   },
   {
     "ürün_numarasi": "3",
     "ürün_ismi": "Hava Filtresi",
-    "ürün_adedi": 18,
+    "ürün_adedi": 11,
     "ürün_kayit_tarihi": "2024-09-22",
     "ürün_fiyati": 39.58
   },
   {
     "ürün_numarasi": "4",
     "ürün_ismi": "Akü",
-    "ürün_adedi": 14,
+    "ürün_adedi": 7,
     "ürün_kayit_tarihi": "2024-10-05",
     "ürün_fiyati": 53.27
   },
@@ -31,34 +31,34 @@
     "ürün_numarasi": "5",
     "ürün_ismi": "Fren Halati",
     "ürün_fiyati": "1511.00",
-    "ürün_adedi": 9,
+    "ürün_adedi": 1,
     "kayit_tarihi": "2024-10-05"
   },
   {
     "ürün_numarasi": "6",
     "ürün_ismi": "Fren Diski",
-    "ürün_adedi": 14,
+    "ürün_adedi": 5,
     "ürün_kayit_tarihi": "2024-09-17",
     "ürün_fiyati": 26.8
   },
   {
     "ürün_numarasi": "7",
     "ürün_ismi": "Şanzıman Yağı",
-    "ürün_adedi": 6,
+    "ürün_adedi": 4,
     "ürün_kayit_tarihi": "2024-09-16",
     "ürün_fiyati": 86.67
   },
   {
     "ürün_numarasi": "8",
     "ürün_ismi": "Lastik",
-    "ürün_adedi": 20,
+    "ürün_adedi": 18,
     "ürün_kayit_tarihi": "2024-10-02",
     "ürün_fiyati": 14.71
   },
   {
     "ürün_numarasi": "9",
     "ürün_ismi": "Motor Yağı",
-    "ürün_adedi": 2,
+    "ürün_adedi": 0,
     "ürün_kayit_tarihi": "2024-09-22",
     "ürün_fiyati": 51.99
   },

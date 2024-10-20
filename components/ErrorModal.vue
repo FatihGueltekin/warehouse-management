@@ -1,7 +1,7 @@
 <template>
     <div v-if="showModal" class="modal-overlay">
       <div class="modal-content">
-        <h3>Error</h3>
+        <h3>Hata</h3>
         <p>{{ errorMessage }}</p>
         <button @click="closeModal">Kapat</button>
       </div>
